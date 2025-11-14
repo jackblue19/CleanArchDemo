@@ -1,0 +1,21 @@
+﻿* Cái folder này bản chất được tạo ra là để:
+	- Phòng trường hợp quá nhiều commands và queries => đưa handlers lại 1 folder cho gọn
+	- Tuỳ kiến trúc ban đầu => có thể biến thể tuỳ ý
+	- 
+
+* Giải ngố CQRS Pattern:
+	→ So sánh trực quan với Repository + Service pattern mà hay code
+		- Commands & Queries ~ Service Interfaces
+		- Handlers ~ Services Implementations
+		("~": tạm hiểu nghĩa là gần như tương đương chứ ko chính xác là ngang nhau đâu)
+	=> tạm hiểu được là CQRS ~ Services được chia nhỏ
+
+* Facts có thể ai cũng đã biết:
+	- .NET compile nhận diện qua namespace
+		=> việc chia ra nhiều file cũng được mà gộp chung cũng được ko khác biệt lắm
+		(khác so với public class bên java hay cpp)
+		→ Có demo cho DTOs vs Validators
+
+	- Advanced Pattern hơn thì: CQRS + EventSourcing	(MediatR)
+		(Tuỳ mức độ dự án mà nên áp dụng EventSourcing hay ko,
+		cá nhân mà nói thì thấy EventSourcing khó nhai như DDD)

@@ -1,0 +1,22 @@
+﻿* Chú thích pattern:
+	1. Entities
+		→ Đây sẽ là nơi scaffold các table từ database sang (nếu theo hướng db-first)
+		→ Nó sẽ luôn có "ID" (identity)
+	2. ValueObjects
+		→ Tạm thời có thể hiểu là mỗi VO là đại diện cho 1 giá trị hoặc tập hợp các thuộc tính
+			(Nó sẽ không cần "ID" vì có thể "chung")
+		→ Mục đích chính mà cá nhân bản thân thấy thì đó là: validate? (có thể đã diễn tả chưa chính xác cho lắm)
+			(như hồi lập trình java core, có sử dụng Getter & Setter, thì tạm có thể hiểu VO là giúp impl get~set)
+	3. Interfaces
+		- Vì có chút pha DDD (Domain Driven Design) nên sẽ đặt interface của repository ở đây
+			(có thể đặt ở Application cũng được, theo như tìm hiểu thì sẽ k hề vi phạm Clean Arch)
+		- Project References:
+			→ Presentation ref Application, Infrastructure
+			→ Application ref Domain
+			→ Infrastructure chỉ ref Application <=> Interface của repo được đặt ở Application
+				(như hiện tại trong sln này thì sẽ là không ref)
+			→ Domain không ref projects nào cả !!!
+	4. Other folders:
+		- Enums
+		- Shared
+		- ...

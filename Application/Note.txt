@@ -1,0 +1,28 @@
+﻿* Chú ý về pattern:
+	1. Nếu theo pattern Repository + Service
+		- Chỉ code ở 2 folders đó là Implementation + Interfaces
+			(đều dành cho service)
+		- Interfaces của Repositories lúc này sẽ đặt ở Domain	(theo DDD)
+			(về mặt Clean Arch thì đặt ở Domain/Application đều được phép)
+		- Có thể có 1 số folders khác như:
+			+ Validators
+			+ Mapping
+			+ ...
+		- Không đụng vào folder "Features"
+			→ Xoá đi (nếu thuần pattern còn hybrid thì giữ nguyên)
+	2. Nếu theo pattern CQRS
+		- Phần lớn sẽ code ở folder Feature
+		- Có thể có 1 số folder khác như:
+			+ Abstraction	[-]
+			+ Common		(Behaviors, Core, Exceptions, Interfaces, Validators)
+			+ Mapping
+			+ ...
+		- Không đụng vào 2 folder "Implementation + Interfaces"
+			→ xoá đi (nếu thuần pattern còn hybrid thì giữ nguyên)
+	3. Tuỳ "độ phức tạp" mà để folder /Mapping trong:
+		→ Từng feat 
+			(e.g, /Features/Human/Mapping) 
+		→ Cùng level với folder /Features
+
+	~ (maybe same với Validators, đang ít thực hành nên chưa thấy rõ được sự khác biệt lắm)
+
